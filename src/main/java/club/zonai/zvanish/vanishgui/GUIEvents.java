@@ -50,7 +50,7 @@ public class GUIEvents implements Listener {
                     player.sendMessage("§8[§cSTAFF§8] §7Teleported to §c" + name.replace(plugin.getConfig().getString("vanishgui_list.vanished_player_info.namecolor"), "") + "§7!");
                     player.teleport(Bukkit.getPlayer(name.replace(plugin.getConfig().getString("vanishgui_list.vanished_player_info.namecolor"), "")));
                 } else {
-                    player.sendMessage("§cYou can't teleport to Yourself!");
+                    player.sendMessage(plugin.getConfig().getString("cant_tp_to_self").replace("&", "§"));
                 }
             }
         }

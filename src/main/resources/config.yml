@@ -16,25 +16,11 @@ join_msg:
   automatic: true
   message: '&e<player> joined the game'
 
-# Vanish Messages
+# Vanish
 # Permission:
 # zVanish.Vanish
-# keep_vanish: Stay Vanished on rejoin
 self_vanish_msg: '&8[&cSTAFF&8] &7You have &cVanished&7!'
 self_unvanish_msg: '&8[&cSTAFF&8] &7You have &cUn-Vanished&7!'
-#NEEDS TO BE FINISHED
-keep_vanish: true
-keep_vanish_msg: '&8[&cSTAFF&8] &7You have joined &cVanished&7!'
-
-# Vanish Settings
-break_blocks:
-  on_by_default: true
-  on_msg: '&8[&cSTAFF&8] &7You can now break blocks while &cVanished&7!'
-  off_msg: '&8[&cSTAFF&8] &7You now cannot break blocks while &cVanished&7!'
-item_pickups:
-  on_by_default: true
-  on_msg: '&8[&cSTAFF&8] &7You can now pickup items while &cVanished&7!'
-  off_msg: '&8[&cSTAFF&8] &7You now cannot pickup items while &cVanished&7!'
 
 # VanishOther
 # Permission: zVanish.VanishOther
@@ -48,9 +34,29 @@ vanish_other:
   vanished_other: '&8[&cSTAFF&8] &7You Vanished &c<target>&7!'
   un-vanished_other: '&8[&cSTAFF&8] &7You Un-Vanished &c<target>&7!'
 
+# Vanish on Join
+# Permission:
+# zVanish.VanishOnJoin
+# (Vanishes Player Automatically if they have Permission, also removes join message for that player)
+# /!\ Requires player to have "zVanish.Vanish" /!\
+vanish_on_join:
+  enabled: true
+  message: '&8[&cSTAFF&8] &7You have joined &cVanished&7!'
+
+# Vanish Settings
+break_blocks:
+  on_by_default: true
+  on_msg: '&8[&cSTAFF&8] &7You can now break blocks while &cVanished&7!'
+  off_msg: '&8[&cSTAFF&8] &7You now cannot break blocks while &cVanished&7!'
+item_pickups:
+  on_by_default: true
+  on_msg: '&8[&cSTAFF&8] &7You can now pickup items while &cVanished&7!'
+  off_msg: '&8[&cSTAFF&8] &7You now cannot pickup items while &cVanished&7!'
+
 # misc
 no_permission: '&c&lNo Permission'
 config_reload_msg: '&aConfig has been Reloaded'
+cant_tp_to_self: '&cYou cannot teleport to Yourself!'
 help_message:
   - '&c&lzVanish Help Menu'
   - '&8&m--------------------------------'

@@ -1,10 +1,12 @@
 package club.zonai.zvanish.events;
 
 import club.zonai.zvanish.zVanish;
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.event.player.PlayerQuitEvent;
 
 public class JoinEvent implements Listener {
 
@@ -29,6 +31,18 @@ public class JoinEvent implements Listener {
         }
         for (int i = 0; i < plugin.vanish_list.size(); i++) {
             player.hidePlayer(plugin.vanish_list.get(i));
+        }
+        if (player.hasPermission("zVanish.VanishOnJoin")) {
+            if (player.hasPermission("zVanish.Vanish")) {
+                if (plugin.getConfig().getBoolean("vanish_on_join.enabled")) {
+                    plugin.vanish_list.add(player);
+                    for (Player others : Bukkit.getOnlinePlayers()) {
+                        others.hidePlayer(player);
+                        player.sendMessage(plugin.getConfig().getString("vanish_on_join.message").replace("&", "§"));
+                        event.setJoinMessage(null);
+                    }
+                }
+            }
         }
     }
 }
