@@ -1,0 +1,30 @@
+main: club.zonai.zvanish.zVanish
+name: zVanish
+version: 1.0-SNAPSHOT
+authors: [Ham#0101]
+commands:
+  Vanish:
+    description: Vanishes Player
+    usage: /vanish
+    aliases: [v, hide, invis, vis]
+  Vanishlist:
+    description: Shows Vanished Players
+    usage: /vanishlist
+    aliases: [vl, vlist]
+  VanishGUI:
+    description: Opens Vanish GUI
+    permission: zVanish.VanishGUI
+    usage: /vanishgui
+    aliases: [vgui, vmenu, vanishmenu, vg]
+  FakeJoin:
+    description: Broadcasts fake join message
+    usage: /fakejoin
+    aliases: [fj]
+  FakeLeave:
+    description: Broadcasts fake leave message
+    usage: /fakeleave
+    aliases: [fl]
+  zVanish:
+    description: Main Menu
+    usage: /zVanish <help / reload>
+    aliases: [zv]

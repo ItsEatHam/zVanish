@@ -1,0 +1,183 @@
+# # # # # # # # # # # # # # # # # # # # # # # # #
+# zVanish Config
+# Plugin made by Ham#0101 for Zonai Development.
+# # # # # # # # # # # # # # # # # # # # # # # # #
+
+
+# Use "<player>" for the players displayname
+# Permissions:
+# zVanish.FakeLeave (CMD ONLY)
+# zVanish.FakeJoin (CMD ONLY)
+# Automatic: auto sends Fake MSG on Vanish
+leave_msg:
+  automatic: true
+  message: '&e<player> left the game'
+join_msg:
+  automatic: true
+  message: '&e<player> joined the game'
+
+# Vanish Messages
+# Permission:
+# zVanish.Vanish
+# keep_vanish: Stay Vanished on rejoin
+self_vanish_msg: '&8[&cSTAFF&8] &7You have &cVanished&7!'
+self_unvanish_msg: '&8[&cSTAFF&8] &7You have &cUn-Vanished&7!'
+#NEEDS TO BE FINISHED
+keep_vanish: true
+keep_vanish_msg: '&8[&cSTAFF&8] &7You have joined &cVanished&7!'
+
+# Vanish Settings
+break_blocks:
+  on_by_default: true
+  on_msg: '&8[&cSTAFF&8] &7You can now break blocks while &cVanished&7!'
+  off_msg: '&8[&cSTAFF&8] &7You now cannot break blocks while &cVanished&7!'
+item_pickups:
+  on_by_default: true
+  on_msg: '&8[&cSTAFF&8] &7You can now pickup items while &cVanished&7!'
+  off_msg: '&8[&cSTAFF&8] &7You now cannot pickup items while &cVanished&7!'
+
+# VanishOther
+# Permission: zVanish.VanishOther
+# Placeholders:
+# <target> (Player who was Vanished)
+# <sender> (Player who Vanished Target)
+vanish_other:
+  offline_msg: '&8[&cSTAFF&8] &7Player is not online'
+  been_vanished: '&8[&cSTAFF&8] &7You have been &cVanished &7by &c<sender>&7!'
+  been_un-vanished: '&8[&cSTAFF&8] &7You have been &cUn-Vanished &7by &c<sender>&7!'
+  vanished_other: '&8[&cSTAFF&8] &7You Vanished &c<target>&7!'
+  un-vanished_other: '&8[&cSTAFF&8] &7You Un-Vanished &c<target>&7!'
+
+# misc
+no_permission: '&c&lNo Permission'
+config_reload_msg: '&aConfig has been Reloaded'
+help_message:
+  - '&c&lzVanish Help Menu'
+  - '&8&m--------------------------------'
+  - '&c/Vanish: &7Vanishes You / Another Player'
+  - '&c/vanishlist: &7Displays List of vanished Players'
+  - '&c/VanishGUI: &7Opens Vanish GUI'
+  - '&c/zVanish reload: &7Reloads Configuration'
+  - '&c/FakeLeave: &7Sends Fake Leave Msg to Server'
+  - '&c/FakeJoin: &7Sends Fake Join Msg to Server'
+  - '&8&m--------------------------------'
+
+# Permission:
+# zVanish.VanishList
+# PlaceHolders:
+# <player> (Vanished Player)
+vanish_list:
+  breaker: '&8&m-------------------------------'
+  title: '&4&lVANISHED STAFF'
+  vanished_name: '&7 - &f<player>'
+  no_vanished_players: '&c&lNo Vanished Players'
+
+
+vanishgui_main:
+  gui_title: '&c&lVanish GUI'
+  vanish_list:
+    material: 'DEAD_BUSH'
+    slot: 15
+    title: '&c&lView Vanished Staff'
+    lore:
+      - '&8&m-------------------------------'
+      - ''
+      - '&7&oView the &c&oVanished Staff&7&o list.'
+      - ''
+      - '&8&m-------------------------------'
+  vanish_settings:
+    material: 'BLAZE_POWDER'
+    slot: 11
+    title: '&c&lVanish Settings'
+    lore:
+      - '&8&m-------------------------------'
+      - ''
+      - '&7&oToggle your &c&oVanish &7&oSettings&7&o.'
+      - ''
+      - '&8&m-------------------------------'
+
+
+# VanishList (In GUI)
+vanishgui_list:
+  gui_title: '&c&lVanished Players'
+  no_vanished_players_title: '&4&lNo Vanished Players'
+  no_vanished_players_lore:
+    - '&8&m-------------------------------'
+    - ''
+    - '&7&oNo Players are Currently &c&oVanished'
+    - ''
+    - '&8&m-------------------------------'
+  vanished_player_info:
+    namecolor: '&4&l'
+    breaker: '&8&m-------------------------------'
+    description: '&7&oThis Player is currently &c&oVanished&7&o!'
+    tp_to_player: '&7&oClick to &c&oTeleport &7&oto Player'
+    players_settings_title: '&4&lSETTINGS'
+    break_block_true: '&fCan Break Blocks: &cTrue'
+    break_block_false: '&fCan Break Blocks: &cFalse'
+    item_pickup_true: '&fCan Pickup Items: &cTrue'
+    item_pickup_false: '&fCan Pickup Items: &cFalse'
+
+# Vanish-Settings (In GUI)
+vanishedgui_settings:
+  gui_title: '&4&lVanish Settings'
+  block_break:
+    slot: 11
+    title: '&c&lToggle Block Breaking'
+    enabled_lore:
+      - '&8&m-------------------------------'
+      - '&7Do you want to break blocks,'
+      - '&7while in &cVanish&7.'
+      - ''
+      - '&r &8» &a&lEnabled'
+      - '&r    &4Disabled'
+      - '&8&m-------------------------------'
+    enabled_sound: 'NOTE_PLING'
+    disabled_lore:
+      - '&8&m-------------------------------'
+      - '&7Do you want to break blocks,'
+      - '&7while in &cVanish&7.'
+      - ''
+      - '&r    &aEnabled'
+      - '&r &8» &4&lDisabled'
+      - '&8&m-------------------------------'
+    disabled_sound: 'NOTE_BASS_DRUM'
+  toggle_vanish:
+    slot: 13
+    material: 'CHEST'
+    title: '&c&lToggle you Vanish'
+    lore:
+      - '&8&m-------------------------------'
+      - '&7Do you want to be &cVanished&7?'
+      - ''
+      - '&7&oClick to Toggle'
+      - '&8&m-------------------------------'
+    sound: 'LEVEL_UP'
+  item_pickup:
+    slot: 11
+    title: '&c&lToggle Item Pickups'
+    enabled_lore:
+      - '&8&m-------------------------------'
+      - '&7Do you want to pickup items,'
+      - '&7while in &cVanish&7.'
+      - ''
+      - '&r &8» &a&lEnabled'
+      - '&r    &4Disabled'
+      - '&8&m-------------------------------'
+    enabled_sound: 'NOTE_PLING'
+    disabled_lore:
+      - '&8&m-------------------------------'
+      - '&7Do you want to pickup items,'
+      - '&7while in &cVanish&7.'
+      - ''
+      - '&r    &aEnabled'
+      - '&r &8» &4&lDisabled'
+      - '&8&m-------------------------------'
+    disabled_sound: 'NOTE_BASS_DRUM'
+
+
+
+
+
+
+
